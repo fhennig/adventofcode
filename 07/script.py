@@ -131,6 +131,10 @@ def main(filename, v, logging=False):
     if logging:
         log.addHandler(h)
     c = parse_circuit(filename)
+    val = c.get_value(v)
+    print(val)
+    # Part 2
+    c.memoized = {"b": val}
     print(c.get_value(v))
 
 
